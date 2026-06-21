@@ -1,0 +1,14 @@
+[package]
+name = "mmio-rs"
+version = "0.1.0"
+edition = "2021"
+author = ["Ivo"]
+description = "Zero-overhead, no_std memory-mapped I/O register abstraction"
+license = "MIT"
+keywords = ["mmio", "embedded", "register", "no-std", "bare-metal"]
+categories = ["embedded", "no-std", "hardware-support"]
+readme = "README.md"
+[dependencies]
+
+[features]
+default = []
