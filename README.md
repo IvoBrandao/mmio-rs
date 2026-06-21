@@ -2,6 +2,10 @@
 
 Zero-overhead, `no_std`, zero-dependency Rust crate for type-safe memory-mapped I/O register access.
 
+[![Crates.io](https://img.shields.io/crates/v/mmio-rs.svg)](https://crates.io/crates/mmio-rs)
+
+---
+
 ## Why
 
 Embedded drivers need to read and write hardware registers at specific memory addresses. Raw `*mut u32` casts are unsafe, untyped, and untestable. This crate provides:
