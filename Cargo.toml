@@ -8,6 +8,11 @@ license = "MIT"
 keywords = ["mmio", "embedded", "register", "no-std", "bare-metal"]
 categories = ["embedded", "no-std", "hardware-support"]
 readme = "README.md"
+
+repository = "https://github.com/IvoBrandao/mmio-rs"
+homepage = "https://github.com/IvoBrandao/mmio-rs"
+documentation = "https://docs.rs/mmio-rs"
+
 [dependencies]
 
 [features]
