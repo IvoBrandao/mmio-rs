@@ -1,8 +1,8 @@
 [package]
 name = "mmio-rs"
-version = "0.1.0"
+version = "0.2.0"
 edition = "2021"
-author = ["Ivo"]
+authors = ["Ivo"]
 description = "Zero-overhead, no_std memory-mapped I/O register abstraction"
 license = "MIT"
 keywords = ["mmio", "embedded", "register", "no-std", "bare-metal"]

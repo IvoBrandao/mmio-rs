@@ -3,11 +3,17 @@ extern "Rust" {
     fn _mmio_critical_section_release(state: u32);
 }
 
+/// RAII guard that acquires the critical section on creation and releases it on drop.
+///
+/// Prefer [`critical_section`] for scoped use. Use this type directly only when
+/// you need to hold the critical section across a scope boundary.
 pub struct IrqGuard {
     state: u32,
 }
 
 impl IrqGuard {
+    /// Enters the critical section (disables interrupts) and returns a guard.
+    /// Interrupts are restored when the guard is dropped.
     #[inline(always)]
     pub fn acquire() -> Self {
         let state = unsafe { _mmio_critical_section_acquire() };
@@ -22,6 +28,10 @@ impl Drop for IrqGuard {
     }
 }
 
+/// Executes `f` inside a critical section, returning its result.
+///
+/// The critical section is entered before calling `f` and exited when `f` returns,
+/// even if `f` panics (via [`IrqGuard`]'s `Drop` impl).
 #[inline(always)]
 pub fn critical_section<F, R>(f: F) -> R
 where

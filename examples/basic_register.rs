@@ -30,12 +30,12 @@ fn main() {
 
     // Compound operations
     reg.write(0xFF00);
-    reg.or(0x00FF);
-    println!("After OR 0x00FF: 0x{:08X}", reg.read());
+    reg.set_bits(0x00FF);
+    println!("After set_bits(0x00FF): 0x{:08X}", reg.read());
 
-    reg.and(0x0F0F);
-    println!("After AND 0x0F0F: 0x{:08X}", reg.read());
+    reg.and_bits(0x0F0F);
+    println!("After and_bits(0x0F0F): 0x{:08X}", reg.read());
 
-    reg.xor(0xFFFF);
-    println!("After XOR 0xFFFF: 0x{:08X}", reg.read());
+    reg.toggle_bits(0xFFFF);
+    println!("After toggle_bits(0xFFFF): 0x{:08X}", reg.read());
 }
